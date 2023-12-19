@@ -135,7 +135,13 @@ function getRandom(arr) {
 
 // Function to generate password with user input
 function generatePassword() {
+  for (i = 0; i < passPromptLength; i++ ) {
 
+    endPassword += getRandom(userImputPass)
+
+  }
+
+  return endPassword;
 }
 
 // Get references to the #generate element
