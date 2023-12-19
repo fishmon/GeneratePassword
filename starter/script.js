@@ -94,6 +94,13 @@ var userImputPass = [""];
 
 // Function to prompt user for password options
 function getPasswordOptions() {
+  passPromptLength = prompt("Please include how many characters you would like your password to contain!");
+ if (passPromptLength < 8 || passPromptLength > 120) {
+    alert("You need to insert a number that is bigger than 8 and smaller than 120");
+    return;
+  
+ }
+  
 
 }
 
