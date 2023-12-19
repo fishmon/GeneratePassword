@@ -105,6 +105,10 @@ function getPasswordOptions() {
 } else  {
   alert("Your password will be " + passPromptLength + " Characters")
 }
+var lowerCase = confirm("Would you like lowercase letters?");
+      if(lowerCase){
+        userImputPass += lowerCasedCharacters.join("");
+      }
   
 
 }
