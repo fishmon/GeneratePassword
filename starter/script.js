@@ -113,6 +113,10 @@ var specialChar = confirm("Would you like special characters?");
       if (specialChar){
         userImputPass += specialCharacters.join("");
       }
+ var upperCase = confirm("Would you like uppercase letters?");
+      if (upperCase){
+        userImputPass += upperCasedCharacters.join("");
+      }
 
 }
 
