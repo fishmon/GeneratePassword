@@ -100,6 +100,11 @@ function getPasswordOptions() {
     return;
   
  }
+ else if (isNaN(passPromptLength)) {
+  confirm("Your input needs to be a valid number")
+} else  {
+  alert("Your password will be " + passPromptLength + " Characters")
+}
   
 
 }
