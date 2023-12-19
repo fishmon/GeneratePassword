@@ -1,4 +1,3 @@
-// Array of special characters to be included in password
 var specialCharacters = [
   '@',
   '%',
@@ -87,46 +86,57 @@ var upperCasedCharacters = [
   'Y',
   'Z'
 ];
-
-var endPassword =  [""]
-var passPromptLength = 0;
-var userImputPass = [""];
+//global scope var
+ var endPassword =  [""]
+ var passPromptLength = 0;
+ var userImputPass = [""];
 
 // Function to prompt user for password options
 function getPasswordOptions() {
-  passPromptLength = prompt("Please include how many characters you would like your password to contain!");
+
+ passPromptLength = prompt("Please include how many characters you would like your password to contain!");
  if (passPromptLength < 8 || passPromptLength > 120) {
     alert("You need to insert a number that is bigger than 8 and smaller than 120");
     return;
   
  }
- else if (isNaN(passPromptLength)) {
-  confirm("Your input needs to be a valid number")
-} else  {
-  alert("Your password will be " + passPromptLength + " Characters")
-}
-var lowerCase = confirm("Would you like lowercase letters?");
+ // check if imput is a number
+    else if (isNaN(passPromptLength)) {
+      confirm("Your input needs to be a valid number")
+    } else  {
+      alert("Your password will be " + passPromptLength + " Characters")
+    }
+    
+      var lowerCase = confirm("Would you like lowercase letters?");
       if(lowerCase){
         userImputPass += lowerCasedCharacters.join("");
       }
-var specialChar = confirm("Would you like special characters?");
+
+    
+     var specialChar = confirm("Would you like special characters?");
       if (specialChar){
         userImputPass += specialCharacters.join("");
       }
-var upperCase = confirm("Would you like uppercase letters?");
+
+      var upperCase = confirm("Would you like uppercase letters?");
       if (upperCase){
         userImputPass += upperCasedCharacters.join("");
       }
-var numbers = confirm("would you like numbers?");
+
+      var numbers = confirm("would you like numbers?");
       if (numbers){
         userImputPass += numericCharacters.join("");
       }
-if (specialCharacters === false && lowerCase === false && upperCase === false && numbers === false) {
-        confirm("Please select at least one Character type!");
-         return;
-  
-        }
-}
+// validate if at least one type of character is true
+      if (specialCharacters === false && lowerCase === false && upperCase === false && numbers === false) {
+      confirm("Please select at least one Character type!");
+       return;
+
+      }
+
+
+
+    }
 
 // Function for getting a random element from an array
 function getRandom(arr) {
@@ -135,6 +145,8 @@ function getRandom(arr) {
 
 // Function to generate password with user input
 function generatePassword() {
+  getPasswordOptions();
+
   for (i = 0; i < passPromptLength; i++ ) {
 
     endPassword += getRandom(userImputPass)
@@ -142,6 +154,7 @@ function generatePassword() {
   }
 
   return endPassword;
+
 }
 
 // Get references to the #generate element
@@ -157,3 +170,4 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener('click', writePassword);
+
