@@ -121,7 +121,11 @@ var numbers = confirm("would you like numbers?");
       if (numbers){
         userImputPass += numericCharacters.join("");
       }
-
+if (specialCharacters === false && lowerCase === false && upperCase === false && numbers === false) {
+        confirm("Please select at least one Character type!");
+         return;
+  
+        }
 }
 
 // Function for getting a random element from an array
