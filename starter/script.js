@@ -109,7 +109,10 @@ var lowerCase = confirm("Would you like lowercase letters?");
       if(lowerCase){
         userImputPass += lowerCasedCharacters.join("");
       }
-  
+var specialChar = confirm("Would you like special characters?");
+      if (specialChar){
+        userImputPass += specialCharacters.join("");
+      }
 
 }
 
